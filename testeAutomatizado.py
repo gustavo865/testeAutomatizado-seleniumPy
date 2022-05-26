@@ -16,7 +16,7 @@ driver = webdriver.Chrome(executable_path)
 # *** STEP 01: Abre o browser e carrega a URL 
 driver.get(strUrl)
 
-# *** STEP 02: Check if the Object was found successfully
+# *** STEP 02: Checa se foi encontrado o elemnto de busca
 isOk = driver.find_element_by_name('q')
 
 if isOk:
@@ -25,7 +25,7 @@ else:
     print('STEP 01: Campo Search não foi encontrado com sucesso')
 
 
-# *** STEP 03: Type some information in the Search field
+# *** STEP 03: Pesquisa o o nome contido na variavel strTextToSearch
 driver.find_element_by_name('q').send_keys(strTextToSearch + Keys.ENTER)
 
 validacaoDeBusca = driver.find_elements_by_xpath('//*[@id="tads"]/div[1]/div/div/div/div[1]/a/div[1]/span')
@@ -36,7 +36,7 @@ else:
     print('Busca não encotrada')
  
 
-# *** STEP 03: Endereço de um elemento HTML e clicka
+# *** STEP 04: Endereço de um elemento HTML e clicka
 driver.find_element_by_xpath('//*[@id="tads"]/div[1]/div/div/div/div[1]/a/div[1]/span').click()
 time.sleep(2)
 
